@@ -1,0 +1,24 @@
+<?php 
+// class parent
+class mobilLengkap{
+	public function nontonTv(){
+		return "menampilkan Tv dihidupkan, Tv Mencari Chanel, Tv Menampilkan gambar";
+	}
+}
+
+class MobilBMW extends MobilLengkap {
+	public function hidupkanMobil(){
+		$tampilkan = "menyalakan mobil<br>";
+		return $tampilkan . $this->nontonTv();
+	}
+	public function matikanMobil(){
+		return "mematikan mobil";
+	}
+	public function ubahGigi(){
+		return "mengubah gigi";
+	}
+}
+
+	$BMW = new MobilBMW();
+	echo $BMW->hidupkanMobil()." & ".$BMW->ubahGigi();
+?>

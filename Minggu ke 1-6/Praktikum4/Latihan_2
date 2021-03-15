@@ -1,0 +1,61 @@
+<?php
+class Produk {
+  public $nama, $warna, $ukuran;
+}
+ 
+class Topi extends Produk {
+  private $model = "produkk";
+  
+  public function getTopi(){
+    $this->nama = "Nike";
+    $this->warna = "Biru";
+    $this->ukuran = "S";
+    return "Nama topi: $this->nama<br>
+            Ukuran: $this->ukuran<br>
+            Model: $this->model<br>
+            Warna: $this->warna<br>";
+  }
+}
+ 
+class Celana extends Produk {
+  private $model = "Baggy Pants";
+  private $tipe = "Fit to L";
+  
+  public function getCelana(){
+    $this->nama = "Baggy Pants Fit To L";
+    $this->warna = "Mocca";
+    $this->ukuran = "L";
+    return "Nama Celana: $this->nama<br>
+            Ukuran: $this->ukuran<br>
+            Model: $this->model<br>
+            Tipe: $this->tipe<br>
+            Warna: $this->warna<br>";
+  }
+}
+ 
+class Baju extends Produk {
+  private $tipe = "Kemeja";
+  
+  public function getBaju(){
+    $this->nama = "Kemeja Retro";
+    $this->warna = "Hitam";
+    $this->ukuran = "L";
+    return "Nama Baju: $this->nama<br>
+            Ukuran: $this->ukuran<br>
+            Tipe: $this->tipe<br>
+            Warna: $this->warna<br>";
+  }
+}
+ 
+$topi = new Topi();
+$celana = new Celana();
+$baju = new Baju();
+ 
+ 
+echo $topi->getTopi();
+echo "<hr>";
+echo $celana->getCelana();
+echo "<hr>";
+echo $baju->getBaju();
+ 
+?>
