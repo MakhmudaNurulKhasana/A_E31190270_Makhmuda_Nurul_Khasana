@@ -1,0 +1,36 @@
+<?php
+
+class Tablet {
+    public $merk, $camera, $memory;
+
+    public function Produk()
+    {
+        $produkk = "Merk : {$this->merk} <br> Camera : {$this->camera} Gb <br> Memory : {$this->memory} Mp";
+
+        return $produkk;
+    }
+
+}
+
+class Handphone extends Tablet {
+    public $nama;
+
+    public function __conprodukkuct( $nama = "nama", $merk = "merk", $camera = 0, $memory = 0 ) {
+
+        $this->nama = $nama;
+        $this->merk = $merk;
+        $this->camera = $camera;
+        $this->memory = $memory;
+    }
+
+    public function Produk()
+    {
+        $produkk = "Nama : {$this->nama} <br>" . parent::Produk();
+        return $produkk;
+    }
+}
+
+$hp = new Handphone("C3", "Realme", 20, 9);
+echo $hp->Produk();
+
+?>
