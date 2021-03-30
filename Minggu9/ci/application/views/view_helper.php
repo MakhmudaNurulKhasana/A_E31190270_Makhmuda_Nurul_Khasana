@@ -13,7 +13,7 @@ echo  heading("Hello CI", 5);
 echo  heading("Hello CI", 6);
 
 $gambar = array(
-'src' => 'https://static.cdn-cdpl.com/source/17045/codeignitor_service_provider-image(700x350)-image(700x350-crop).jpg',
+'src' => 'https://static.cdn-cdpl.com/source/17045/codeignitor_service_provider-image(700x350-crop)-image(700x350-crop).jpg',
 'alt' => 'Codeigniter-CI',
 'class' => 'post_images',
 'width' => '300',
