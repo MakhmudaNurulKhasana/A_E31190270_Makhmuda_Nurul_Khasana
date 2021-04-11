@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit ('No direct script access allowed');
 
 class Teslib extends CI_Controller {
-	function _construct(){
-		parent::_construct();
+	function __construct(){
+		parent::__construct();
 		$this->load->library('table');
 		$this->load->model('Mahasiswa_model');
 	}
