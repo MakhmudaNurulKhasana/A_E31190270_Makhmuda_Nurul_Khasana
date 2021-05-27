@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UsingPreferences</string>
+    <string name="label_confirm_password">Konfirmasi Password</string>
+    <string name="label_signup">SignUp</string>
+</resources>
