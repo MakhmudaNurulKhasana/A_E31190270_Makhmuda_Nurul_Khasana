@@ -1,11 +1,15 @@
+<?php
+$getUser = $this->session->userdata('session_user');
+$getGrup = $this->session->userdata('session_grup');
+?>
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title></title>
-   <link rel="stylesheet" href="<?php echo base_url();?>ass/css/bootstrap.min.css">
-   <!-- untuk mengakses file css bootstrap pada folder ass-->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title></title>
+ <link rel="stylesheet" href="<?php echo base_url();?>ass/css/bootstrap.min.css">
+ <!-- untuk mengakses file css bootstrap pada folder ass-->
 </head>
 <body>
     <div class="card shdow mb-4">
@@ -26,8 +30,8 @@
                             <?php 
                             $no = 1; //no default 1
                             foreach ($user as $baris) { //
-                               ?>
-                               <tr>
+                             ?>
+                             <tr>
                                 <td><?php echo $no++; ?></td>
                                 <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                 <td><?php echo $baris->username; ?></td> 
@@ -38,7 +42,14 @@
                                 <!--untuk menampilkan nama -->
                                 <td><?php echo $baris->grup; ?></td>
                                 <!--untuk menampilkan jenis grup-->
-                                <td></td>
+                                <td>
+                                    <?php
+                                    if($getGrup==1) {
+                                    echo '<a href="'.base_url('Mahasiswa/edit/'.$baris->id).'" class="fa fa-edit"></a>';
+                                    echo " ";
+                                    echo '<a href="'.base_url('Mahasiswa/hapus/'.$baris->id).'" class="fa fa-times"></a>';
+                                }
+                                    ?></td>
                             </tr>
                             <?php 
                         }
@@ -46,9 +57,9 @@
                     </tbody>
                 </table>
                 <a href="<?php echo base_url('Mahasiswa/tambah')?>" class="btn btn-success btn-icon-split"> Tambah Data</a>
-                <!-- untuk mengakses file function tambah pada controller Mahasiswa-->
+                    <!-- untuk mengakses file function tambah pada controller Mahasiswa-->
+                </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
