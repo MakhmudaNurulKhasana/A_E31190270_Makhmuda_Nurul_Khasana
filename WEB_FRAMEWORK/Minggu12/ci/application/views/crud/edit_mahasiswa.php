@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tambah Data</title>
+  <title>Edit Data</title>
   <link rel="stylesheet" href="<?php echo base_url();?>ass/css/bootstrap.min.css">
   <!--untuk memanggil file bootstrap pada folder ass/css -->
 </head>

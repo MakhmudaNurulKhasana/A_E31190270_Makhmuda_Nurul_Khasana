@@ -32,7 +32,7 @@ class Mahasiswa extends CI_Controller{ //membuat controller Mahasiswa
 		);
 		$this->Mahasiswa_model->input_data($data, 'tm_user'); 
 		//untuk mengakses file model 'Mahasiswa_model' dan data tersimpan pada tabel tm_user
-		redirect('Mahasiswa/index');
+		redirect('Mahasiswa');
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
 
@@ -66,7 +66,7 @@ class Mahasiswa extends CI_Controller{ //membuat controller Mahasiswa
 	public function hapus($id) {
 		$where = array('id' => $id);
 		$this->Mahasiswa_model->hapus_data($where, 'tm_user');
-		redirect('Mahasiswa/index');
+		redirect('Mahasiswa');
 	}
 
 	public function Api() {
@@ -103,7 +103,19 @@ class Mahasiswa extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function ApiUpdate(){
-		
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$nama = $this->input->post('nama');
+		$grup = $this->input->post('grup');
+
+		$data = array(
+			'username' => $username,
+			'password' => $password,
+			'nama' => $nama,
+			'grup' => $grup
+		);
+		$this->Mahasiswa_model->edit_data($data, 'tm_user');
+		echo json_encode($array);
 	}
 }
 ?>
