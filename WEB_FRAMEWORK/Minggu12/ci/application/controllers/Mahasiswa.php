@@ -103,6 +103,7 @@ class Mahasiswa extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function ApiUpdate(){
+		$id = $this->input->post('id');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$nama = $this->input->post('nama');
@@ -114,7 +115,10 @@ class Mahasiswa extends CI_Controller{ //membuat controller Mahasiswa
 			'nama' => $nama,
 			'grup' => $grup
 		);
-		$this->Mahasiswa_model->edit_data($data, 'tm_user');
+		$where = array(
+			'id' => $id
+		);
+		$this->Mahasiswa_model->update_data($where,$data, 'tm_user');
 		echo json_encode($array);
 	}
 }
